@@ -1,0 +1,1 @@
+let user: [number, string] = [1, "Mg Mg"]; // If you set two annotations, you need to add two values exactly. 
