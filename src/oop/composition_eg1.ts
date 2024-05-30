@@ -26,10 +26,6 @@ class Department {
   }
 }
 
-class Hello{
-
-}
-
 let university = new University([
   new Department("HR Department"),
   new Department("Software Department"),
