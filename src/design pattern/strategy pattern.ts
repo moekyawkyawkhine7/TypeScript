@@ -25,7 +25,7 @@ class FacebookLogin implements LoginStrategy {
 class LoginSystem {
   private strategy: LoginStrategy; // composition
 
-  constructor(strategy: LoginStrategy) {
+  constructor(strategy: LoginStrategy) { // dependency inversion
     this.strategy = strategy;
   }
 
