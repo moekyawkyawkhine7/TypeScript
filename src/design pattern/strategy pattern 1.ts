@@ -2,30 +2,11 @@ interface LoginStrategy {
   login(username: string, password: string): void;
 }
 
-class EmailLogin implements LoginStrategy {
-  login(username: string, password: string) {
-    console.log(`Email Login: User Name: ${username}, Password: ${password}`);
-  }
-}
-
-class GoogleLogin implements LoginStrategy {
-  login(username: string, password: string): void {
-    console.log(`Google Login: User Name: ${username}, Password: ${password}`);
-  }
-}
-
-class FacebookLogin implements LoginStrategy {
-  login(username: string, password: string): void {
-    console.log(
-      `Facebook Login: User Name: ${username}, Password: ${password}`
-    );
-  }
-}
-
 class LoginSystem {
   private strategy: LoginStrategy; // composition
 
-  constructor(strategy: LoginStrategy) { // dependency inversion
+  constructor(strategy: LoginStrategy) {
+    // dependency inversion
     this.strategy = strategy;
   }
 
@@ -35,6 +16,26 @@ class LoginSystem {
 
   loginProcess(username: string, password: string) {
     this.strategy.login(username, password);
+  }
+}
+
+class EmailLogin implements LoginStrategy {
+  login(username: string, password: string) {
+    console.log(`Email Login: User Name: ${username}, Password: ${password}`);
+  }
+}
+
+class GoogleLogin implements LoginStrategy {
+  login(username: string, password: string) {
+    console.log(`Google Login: User Name: ${username}, Password: ${password}`);
+  }
+}
+
+class FacebookLogin implements LoginStrategy {
+  login(username: string, password: string) {
+    console.log(
+      `Facebook Login: User Name: ${username}, Password: ${password}`
+    );
   }
 }
 
