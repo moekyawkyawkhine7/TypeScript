@@ -28,7 +28,7 @@ map.set(3, "three")
 //     isError: boolean;
 // }
 
-type ApiResponse<Data extends object = { status: boolean }> = { // type have to be object, then boolean
+type ApiResponse<Data extends object = { status: boolean }> = { // type have to be object, and have default type
     data: Data;
     isError: boolean;
 }
